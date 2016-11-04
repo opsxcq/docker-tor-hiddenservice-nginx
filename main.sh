@@ -47,8 +47,6 @@ then
     service tor start
     echo '[+] Starting nginx'
     service nginx start
-    while [ true ]
-    do
-        sleep 1;
-    done;
+    # Monitor logs
+    tail -f /web/*.log
 fi
