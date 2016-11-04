@@ -2,9 +2,6 @@ FROM debian:jessie
 
 MAINTAINER opsxcq <opsxcq@thestorm.com.br>
 
-# Setup user
-RUN useradd --system --uid 666 -M --shell /usr/sbin/nologin hidden
-
 # Base packages
 RUN apt-get update && \
     apt-get -y install \
@@ -30,10 +27,6 @@ ADD ./main.sh /main.sh
 
 # Tor Config
 ADD ./torrc /etc/tor/torrc
-
-# Configure permissions
-RUN chmod 644 -R /etc/nginx/ && \
-    chmod 644 -R /etc/tor/
 
 # Add nginx default configuration 
 ADD ./nginx.conf /etc/nginx/nginx.conf
