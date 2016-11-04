@@ -52,14 +52,14 @@ And you have the service running ! :)
 
 ## Build
 
-docker build -t strm/tor-hidden-service-nginx .
+docker build -t strm/docker-tor-hiddenservice-nginx .
 
 ## Run
 
-docker run -d --restart=always --name hiddensite -v $(pwd)/web:/web strm/tor-hidden-service-nginx 
+docker run -d --restart=always --name hiddensite -v $(pwd)/web:/web strm/docker-tor-hiddenservice-nginx 
 
 ## Shell
 
-docker run -it --rm -v $(pwd)/web:/web --entrypoint /bin/bash strm/tor-hidden-service-nginx
+docker run -it --rm -v $(pwd)/web:/web --entrypoint /bin/bash strm/docker-tor-hiddenservice-nginx
 
 [print]: https://github.com/opsxcq/docker-tor-hiddenservice-nginx/raw/master/print.png
