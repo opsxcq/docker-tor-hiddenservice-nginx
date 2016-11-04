@@ -1,6 +1,6 @@
 FROM debian:jessie
 
-MAINTAINER Rafael <rafael@thestorm.com.br>
+MAINTAINER opsxcq <opsxcq@thestorm.com.br>
 
 # Base packages
 RUN apt-get update && \
