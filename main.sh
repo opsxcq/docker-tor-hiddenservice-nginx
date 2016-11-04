@@ -44,9 +44,9 @@ then
     echo '[+] Initializing local clock'
     ntpdate -B -q 0.debian.pool.ntp.org
     echo '[+] Starting tor'
-    service tor start
+    tor -f /etc/tor/torrc &
     echo '[+] Starting nginx'
-    service nginx start
+    nginx &
     # Monitor logs
     tail -f /web/*.log
 fi

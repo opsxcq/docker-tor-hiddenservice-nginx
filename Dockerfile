@@ -2,6 +2,9 @@ FROM debian:jessie
 
 MAINTAINER opsxcq <opsxcq@thestorm.com.br>
 
+# Setup user
+RUN useradd --system --uid 666 -M --shell /usr/sbin/nologin hidden
+
 # Base packages
 RUN apt-get update && \
     apt-get -y install \
@@ -31,12 +34,14 @@ ADD ./torrc /etc/tor/torrc
 # Add nginx default configuration 
 ADD ./nginx.conf /etc/nginx/nginx.conf
 
+# Security meansure
+USER hidden-service
+
 # Configuration files and data output folder
 VOLUME /web
 WORKDIR /web
 
-# Network configuration for browser exploidation
-EXPOSE 80
+USER hidden
 
 ENTRYPOINT ["/main.sh"]
 CMD ["serve"]
