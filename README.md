@@ -33,7 +33,7 @@ docker pull strm/docker-tor-hiddenservice-nginx
 Wait to the container image be downloaded. And them we can generate our site skeleton:
 
 ```sh
-#docker run -it --rm -v $(pwd)/web:/web strm/docker-tor-hiddenservice-nginx generate ^strm
+$docker run -it --rm -v $(pwd)/web:/web strm/docker-tor-hiddenservice-nginx generate ^strm
 [+] Generating the address with mask: ^strm
 [+] Found matching domain after 137072 tries: strmfyygjp5st54g.onion
 [+] Generating nginx configuration for site  strmfyygjp5st54g.onion
