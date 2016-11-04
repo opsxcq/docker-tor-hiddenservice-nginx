@@ -1,4 +1,4 @@
-# Easy container for running hidden services
+# Docker container for creating and running your hidden services 
 
 Easily run a hidden service inside the Tor network with this container
 
