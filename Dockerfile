@@ -30,6 +30,7 @@ ADD ./main.sh /main.sh
 
 # Tor Config
 ADD ./torrc /etc/tor/torrc
+RUN chown hidden:hidden -R /var/lib/tor /etc/tor /etc/nginx /var/log/nginx
 
 # Add nginx default configuration 
 ADD ./nginx.conf /etc/nginx/nginx.conf
