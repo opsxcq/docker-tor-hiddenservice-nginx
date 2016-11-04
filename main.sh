@@ -22,7 +22,7 @@ then
 
     echo '[+] Generating nginx configuration for site '$address
     echo 'server {' > /web/site.conf
-    echo '  listen 127.0.0.1:80;' >> /web/site.conf
+    echo '  listen 127.0.0.1:8080;' >> /web/site.conf
     echo '  root /web/www/;' >> /web/site.conf
     echo '  index index.html index.htm;' >> /web/site.conf
     echo '  server_name '$address';' >> /web/site.conf
