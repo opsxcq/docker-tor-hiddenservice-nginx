@@ -54,6 +54,10 @@ And you have the service running ! :)
   <img src="https://github.com/opsxcq/docker-tor-hiddenservice-nginx/raw/master/print.png" alt="print"/>
   </p>
 
+## Troubleshoot 
+
+ - 403 error on nginx, check your directory permissions and folder permissions. Nginx run as "hidden" user, his UID is 666, just check if you give this user access to the /web/www folder (in the case the folder mapped to it).
+
 ## Build
 
 docker build -t strm/docker-tor-hiddenservice-nginx .
