@@ -28,7 +28,7 @@ ADD ./main.sh /main.sh
 # Tor Config
 ADD ./torrc /etc/tor/torrc
 
-# Link nginx conf to /web/conf
+# Add nginx default configuration 
 ADD ./nginx.conf /etc/nginx/nginx.conf
 
 # Configuration files and data output folder
