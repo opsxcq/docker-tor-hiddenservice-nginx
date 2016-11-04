@@ -1,6 +1,6 @@
 # Docker container for creating and running your hidden services 
 [![Docker Pulls](https://img.shields.io/docker/pulls/strm/docker-tor-hiddenservice-nginx.svg?style=plastic)](https://hub.docker.com/r/strm/docker-tor-hiddenservice-nginx/)
-[![Open Source Love](https://badges.frapsoft.com/os/gpl/gpl.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
+[![Open Source Love](https://badges.frapsoft.com/os/gpl/gpl.svg?v=102&style=plastic)](https://github.com/ellerbrock/open-source-badge/)
 
 Easily run a hidden service inside the Tor network with this container
 
