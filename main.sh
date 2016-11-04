@@ -51,5 +51,8 @@ then
     echo '[+] Starting nginx'
     nginx &
     # Monitor logs
-    tail -f /web/*.log
+    while [ true ]
+    do
+        tail -f /web/*.log
+    done
 fi
