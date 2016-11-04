@@ -7,8 +7,7 @@ Generate the skeleton configuration for you hidden service, replace <pattern> fo
 Example, if you want to your hidden service contain the word 'boss', just use this word as argument. You can use regular expressions, like ```^boss```, will generate an address wich will start with 'boss'. Be aware that bigger the pattern, more time it will take to generate it.
 
 ```sh
-docker run -it --rm \
-       -v $(pwd)/web:/web \
+docker run -it --rm -v $(pwd)/web:/web \
        strm/docker-tor-hiddenservice-nginx generate <pattern>
 ```
 
@@ -16,8 +15,7 @@ docker run -it --rm \
 Create an container named 'hiddensite' to serve your generated hidden service
 
 ```sh
-docker run -d --restart=always \
-       --name hiddensite -v $(pwd)/web:/web \
+docker run -d --restart=always --name hiddensite -v $(pwd)/web:/web \
        strm/docker-tor-hiddenservice-nginx 
 ```
 
@@ -43,7 +41,8 @@ Wait to the container image be downloaded. And them we can generate our site ske
 Now we have our skeleton generated, we can run the container with:
 
 ```sh
-docker run -d --restart=always --name hiddensite -v $(pwd)/web:/web strm/docker-tor-hiddenservice-nginx
+docker run -d --restart=always --name hiddensite \
+       -v $(pwd)/web:/web strm/docker-tor-hiddenservice-nginx
 ```
 
 And you have the service running ! :)
@@ -63,5 +62,6 @@ docker run -d --restart=always --name hiddensite \
 
 ## Shell
 
-docker run -it --rm -v $(pwd)/web:/web --entrypoint /bin/bash strm/docker-tor-hiddenservice-nginx
+docker run -it --rm -v $(pwd)/web:/web \
+       --entrypoint /bin/bash strm/docker-tor-hiddenservice-nginx
 
