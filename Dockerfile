@@ -32,8 +32,7 @@ ADD ./main.sh /main.sh
 ADD ./torrc /etc/tor/torrc
 
 # Configure permissions
-RUN chmod -R 777 /var/log/nginx /var/lib/tor/ /var/log/tor && \
-    chmod 644 -R /etc/nginx/ && \
+RUN chmod 644 -R /etc/nginx/ && \
     chmod 644 -R /etc/tor/
 
 # Add nginx default configuration 
