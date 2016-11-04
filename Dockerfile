@@ -32,7 +32,7 @@ ADD ./main.sh /main.sh
 ADD ./torrc /etc/tor/torrc
 
 # Configure permissions
-RUN chown hidden:hidden -R /var/lib/tor /etc/tor /etc/nginx /var/log/nginx /var/lib/ /var/lib/tor/
+RUN chown hidden:hidden -R /var/lib /etc/tor /etc/nginx /var/log/nginx /var/lob/tor/
 
 # Add nginx default configuration 
 ADD ./nginx.conf /etc/nginx/nginx.conf
