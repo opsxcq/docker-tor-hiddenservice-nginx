@@ -1,4 +1,4 @@
-# Docker container for creating and running your hidden services 
+# Docker container for creating and running your hidden service 
 [![Docker Pulls](https://img.shields.io/docker/pulls/strm/docker-tor-hiddenservice-nginx.svg?style=plastic)](https://hub.docker.com/r/strm/docker-tor-hiddenservice-nginx/)
 ![License](https://img.shields.io/badge/License-GPL-blue.svg?style=plastic)
 
