@@ -53,6 +53,6 @@ then
     # Monitor logs
     while [ true ]
     do
-        tail -f /web/*.log
+        sleep 1
     done
 fi
