@@ -1,5 +1,5 @@
 # Docker container for creating and running your hidden service 
-[![Docker Pulls](https://img.shields.io/docker/pulls/strm/docker-tor-hiddenservice-nginx.svg?style=plastic)](https://hub.docker.com/r/strm/docker-tor-hiddenservice-nginx/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/strm/docker-tor-hiddenservice-nginx.svg?style=plastic)](https://hub.docker.com/r/strm/tor-hiddenservice-nginx/)
 ![License](https://img.shields.io/badge/License-GPL-blue.svg?style=plastic)
 
 
@@ -11,7 +11,7 @@ Example, if you want to your hidden service contain the word 'boss', just use th
 
 ```sh
 docker run -it --rm -v $(pwd)/web:/web \
-       strm/docker-tor-hiddenservice-nginx generate <pattern>
+       strm/tor-hiddenservice-nginx generate <pattern>
 ```
 
 
@@ -19,7 +19,7 @@ Create an container named 'hiddensite' to serve your generated hidden service
 
 ```sh
 docker run -d --restart=always --name hiddensite -v $(pwd)/web:/web \
-       strm/docker-tor-hiddenservice-nginx 
+       strm/tor-hiddenservice-nginx 
 ```
 
 ## Example
@@ -27,13 +27,13 @@ docker run -d --restart=always --name hiddensite -v $(pwd)/web:/web \
 Let's create a hidden service with the name beginning with strm.
 
 ```sh
-docker pull strm/docker-tor-hiddenservice-nginx
+docker pull strm/tor-hiddenservice-nginx
 ```
 
 Wait to the container image be downloaded. And them we can generate our site skeleton:
 
 ```sh
-$docker run -it --rm -v $(pwd)/web:/web strm/docker-tor-hiddenservice-nginx generate ^strm
+$docker run -it --rm -v $(pwd)/web:/web strm/tor-hiddenservice-nginx generate ^strm
 [+] Generating the address with mask: ^strm
 [+] Found matching domain after 137072 tries: strmfyygjp5st54g.onion
 [+] Generating nginx configuration for site  strmfyygjp5st54g.onion
@@ -45,7 +45,7 @@ Now we have our skeleton generated, we can run the container with:
 
 ```sh
 docker run -d --restart=always --name hiddensite \
-       -v $(pwd)/web:/web strm/docker-tor-hiddenservice-nginx
+       -v $(pwd)/web:/web strm/tor-hiddenservice-nginx
 ```
 
 And you have the service running ! :)
@@ -60,15 +60,15 @@ And you have the service running ! :)
 
 ## Build
 
-docker build -t strm/docker-tor-hiddenservice-nginx .
+docker build -t strm/tor-hiddenservice-nginx .
 
 ## Run
 
 docker run -d --restart=always --name hiddensite \
-       -v $(pwd)/web:/web strm/docker-tor-hiddenservice-nginx 
+       -v $(pwd)/web:/web strm/tor-hiddenservice-nginx 
 
 ## Shell
 
 docker run -it --rm -v $(pwd)/web:/web \
-       --entrypoint /bin/bash strm/docker-tor-hiddenservice-nginx
+       --entrypoint /bin/bash strm/tor-hiddenservice-nginx
 
