@@ -51,8 +51,5 @@ then
     echo '[+] Starting nginx'
     nginx &
     # Monitor logs
-    while [ true ]
-    do
-        sleep 1
-    done
+    sleep infinity
 fi
