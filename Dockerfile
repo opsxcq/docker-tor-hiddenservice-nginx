@@ -1,6 +1,6 @@
 FROM debian:jessie
 
-MAINTAINER opsxcq <opsxcq@thestorm.com.br>
+LABEL maintainer "opsxcq@strm.sh"
 
 # Base packages
 RUN apt-get update && \
