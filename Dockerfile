@@ -5,13 +5,13 @@ LABEL maintainer "opsxcq@strm.sh"
 # Base packages
 RUN apt-get update && \
     apt-get -y install \
-    nginx \  
+    nginx \
     tor torsocks ntpdate
 
 # Compile shallot
 ADD ./shallot /shallot
 RUN apt-get -y install \
-    build-essential \ 
+    build-essential \
     libssl-dev && \
     cd /shallot && \
     ./configure && \
