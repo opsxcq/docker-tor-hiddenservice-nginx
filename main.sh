@@ -38,10 +38,11 @@ then
     echo '[+] Creating www folder'
     mkdir /web/www
     chmod 700 /web/
-    chmod 755 /web/www
+    chmod 700 /web/www
     echo '[+] Generating index.html template'
     echo '<html><head><title>Your very own hidden service is ready</title></head><body><h1>Well done !</h1></body></html>' > /web/www/index.html
-    chown hidden:hidden -R /web/www
+    chown hidden:hidden -R /web/
+    chown nginx:nginx -R /web/www
 fi
 
 if [ "$1" == "serve" ]
@@ -54,9 +55,9 @@ then
     echo '[+] Initializing local clock'
     ntpdate -B -q 0.debian.pool.ntp.org
     echo '[+] Starting tor'
-    tor -f /etc/tor/torrc &
+    sudo -u hidden tor -f /etc/tor/torrc &
     echo '[+] Starting nginx'
-    nginx &
+    sudo -u nginx nginx &
     
     # Monitor logs
     sleep infinity
