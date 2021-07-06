@@ -42,7 +42,6 @@ then
     echo '[+] Generating index.html template'
     echo '<html><head><title>Your very own hidden service is ready</title></head><body><h1>Well done !</h1></body></html>' > /web/www/index.html
     chown hidden:hidden -R /web/
-    chown nginx:nginx -R /web/www
 fi
 
 if [ "$1" == "serve" ]
@@ -55,9 +54,9 @@ then
     echo '[+] Initializing local clock'
     ntpdate -B -q 0.debian.pool.ntp.org
     echo '[+] Starting tor'
-    su -c tor -f /etc/tor/torrc & hidden
+    tor -f /etc/tor/torrc &
     echo '[+] Starting nginx'
-    su -c nginx & nginx
+    nginx &
     
     # Monitor logs
     sleep infinity
