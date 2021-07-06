@@ -55,9 +55,9 @@ then
     echo '[+] Initializing local clock'
     ntpdate -B -q 0.debian.pool.ntp.org
     echo '[+] Starting tor'
-    sudo -u hidden tor -f /etc/tor/torrc &
+    su -c tor -f /etc/tor/torrc & hidden
     echo '[+] Starting nginx'
-    sudo -u nginx nginx &
+    su -c nginx & nginx
     
     # Monitor logs
     sleep infinity
