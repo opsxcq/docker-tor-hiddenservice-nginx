@@ -38,6 +38,7 @@ RUN apt-get -y install \
 
 # Security and permissions
 RUN useradd --system --uid 666 -M --shell /usr/sbin/nologin hidden
+RUN useradd --system --uid 667 -M --shell /usr/sbin/nologin nginx
 
 # Configure nginx logs to go to Docker log collection (via stdout/stderr)
 RUN ln --symbolic --force /dev/stdout /var/log/nginx/access.log
