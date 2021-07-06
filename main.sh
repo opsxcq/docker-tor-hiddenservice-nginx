@@ -57,6 +57,11 @@ then
     tor -f /etc/tor/torrc &
     echo '[+] Starting nginx'
     nginx &
+    
+    #debug
+    ls -la /web/
+    ls -la /web/www
+    
     # Monitor logs
     sleep infinity
 fi
