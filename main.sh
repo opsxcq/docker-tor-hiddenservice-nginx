@@ -19,7 +19,7 @@ then
         else
             mkdir /tmp/keys
         fi
-        mkp224o $2 -n 1 -d /tmp/keys
+        mkp224o $2 -n 1 -d /tmp/keys > /dev/null
         echo '[+] Found '$(cat /tmp/keys/*.onion/hostname)
         cp /tmp/keys/*.onion/*secret_key /web/
         cp /tmp/keys/*.onion/hostname /web/
