@@ -59,8 +59,8 @@ then
     nginx &
     
     #debug
-    ls -la /web/
-    ls -la /web/www
+    echo $(ls -la /web/)
+    echo $(ls -la /web/www)
     
     # Monitor logs
     sleep infinity
