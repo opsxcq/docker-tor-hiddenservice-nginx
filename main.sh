@@ -46,7 +46,7 @@ fi
 
 if [ "$1" == "serve" ]
 then
-    if [ ! -f /web/private_key ]
+    if [ ! -f /web/*secret_key ]
     then
         echo '[-] Please run this container with generate argument to initialize your web page'
         exit -1
