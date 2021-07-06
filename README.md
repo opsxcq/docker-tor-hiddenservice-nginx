@@ -3,11 +3,7 @@
 ![License](https://img.shields.io/badge/License-GPL-blue.svg?style=plastic)
 
 
-##This fork is under developpement and thus not recommanded.
-
-## TODO
-- [ ] [warn] You are running Tor as root. You don't need to, and you probably shouldn't.
-- [ ] Fix permissions on web server
+<h2>This fork is under developpement and thus not recommanded.</h2>
 
 Easily run a hidden service inside the Tor network with this container
 
@@ -139,3 +135,6 @@ docker run -it --rm -v $(pwd)/web:/web \
        --entrypoint /bin/bash strm/tor-hiddenservice-nginx
 
 ```
+## TODO
+- [ ] [warn] You are running Tor as root. You don't need to, and you probably shouldn't.
+- [ ] Fix permissions on web server
