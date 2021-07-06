@@ -37,7 +37,7 @@ then
 
     echo '[+] Creating www folder'
     mkdir /web/www
-    chmod 733 /web/
+    chmod 700 /web/
     chmod 755 /web/www
     echo '[+] Generating index.html template'
     echo '<html><head><title>Your very own hidden service is ready</title></head><body><h1>Well done !</h1></body></html>' > /web/www/index.html
