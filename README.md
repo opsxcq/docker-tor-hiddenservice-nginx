@@ -3,6 +3,12 @@
 ![License](https://img.shields.io/badge/License-GPL-blue.svg?style=plastic)
 
 
+##This fork is under developpement and thus not recommanded.
+
+## TODO
+[] [warn] You are running Tor as root. You don't need to, and you probably shouldn't.
+[] Fix permissions on web server
+
 Easily run a hidden service inside the Tor network with this container
 
 
