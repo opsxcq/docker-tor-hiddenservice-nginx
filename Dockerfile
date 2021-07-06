@@ -8,19 +8,33 @@ RUN apt-get update && \
     nginx \
     tor torsocks ntpdate
 
-# Compile shallot
-ADD ./shallot /shallot
+# Compile mkp224o
+ADD ./mkp224o /mkp224o
 RUN apt-get -y install \
-    build-essential \
-    libssl-dev && \
-    cd /shallot && \
+    gcc libsodium-dev make autoconf && \
+    cd /mkp224o && \
+    ./autogen.sh && \
     ./configure && \
     make && \
-    mv ./shallot /bin && \
+    mv ./mkp224o /bin && \
     cd / && \
-    rm -Rf /shallot && \
-    apt-get -y purge build-essential libssl-dev && \
+    rm -Rf /mkp224o && \
+    apt-get -y purge gcc libsodium-dev make autoconf && \
     rm -Rf /var/lib/apt/lists/*
+
+## Compile shallot
+#ADD ./shallot /shallot
+#RUN apt-get -y install \
+#    build-essential \
+#    libssl-dev && \
+#    cd /shallot && \
+#    ./configure && \
+#    make && \
+#    mv ./shallot /bin && \
+#    cd / && \
+#    rm -Rf /shallot && \
+#    apt-get -y purge build-essential libssl-dev && \
+#    rm -Rf /var/lib/apt/lists/*
 
 # Security and permissions
 RUN useradd --system --uid 666 -M --shell /usr/sbin/nologin hidden
