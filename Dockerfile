@@ -56,6 +56,8 @@ ADD ./nginx.conf /etc/nginx/nginx.conf
 VOLUME /web
 WORKDIR /web
 
+EXPOSE 9050
+
 ENTRYPOINT ["/main.sh"]
 CMD ["serve"]
 
