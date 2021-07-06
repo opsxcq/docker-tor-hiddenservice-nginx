@@ -13,7 +13,6 @@ then
         exit -1
     else
         echo '[+] Generating the address with mask: '$2
-        #shallot -f /tmp/key $2
         if [ -d /tmp/keys ]
         then
             rm /tmp/keys/ -r
@@ -23,8 +22,6 @@ then
         mkp224o $2 -n 1 -d /tmp/keys
         echo '[+] Found '$(cat /tmp/keys/*.onion/hostname)
         cp /tmp/keys/*.onion/*secret_key /web/private_key
-        # echo '[+] '$(grep Found /tmp/key) $
-        grep 'BEGIN RSA' -A 99 /tmp/key > /web/private_key
     fi
 
     address=$(cat /tmp/keys/*.onion/hostname)
