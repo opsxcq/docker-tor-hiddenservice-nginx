@@ -2,6 +2,10 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/ozeliurs/tor-hiddenservice-nginx.svg?style=plastic)](https://hub.docker.com/r/ozeliurs/tor-hiddenservice-nginx/)
 ![License](https://img.shields.io/badge/License-GPL-blue.svg?style=plastic)
 
+This is a fork of opsxcq's project. This docker image now supports tor v3
+adresses and shallot has been replaced by mkp224o (v3 compatible).
+Feel free to open issues on this project if you see something wrong.
+
 Easily run a hidden service inside the Tor network with this container
 
 
