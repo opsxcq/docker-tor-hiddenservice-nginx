@@ -3,7 +3,7 @@
 ![License](https://img.shields.io/badge/License-GPL-blue.svg?style=plastic)
 
 
-<h2>This fork is under developpement and thus not recommanded.</h2>
+<h2>:warning: This fork is under developpement and thus not recommanded. :warning:</h2>
 
 Easily run a hidden service inside the Tor network with this container
 
