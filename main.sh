@@ -14,7 +14,7 @@ then
     else
         echo '[+] Generating the address with mask: '$2
         #shallot -f /tmp/key $2
-        mkp224o -f $2 -n 1 -O /tmp/key
+        mkp224o $2 -n 1 -O /tmp/key
         echo '[+] '$(grep Found /tmp/key)
         grep 'BEGIN RSA' -A 99 /tmp/key > /web/private_key
     fi
