@@ -21,7 +21,8 @@ then
         fi
         mkp224o $2 -n 1 -d /tmp/keys
         echo '[+] Found '$(cat /tmp/keys/*.onion/hostname)
-        cp /tmp/keys/*.onion/*secret_key /web/private_key
+        cp /tmp/keys/*.onion/*secret_key /web/
+        cp /tmp/keys/*.onion/hostname /web/
     fi
 
     address=$(cat /tmp/keys/*.onion/hostname)
