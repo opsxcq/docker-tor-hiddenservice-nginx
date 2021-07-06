@@ -2,9 +2,6 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/strm/tor-hiddenservice-nginx.svg?style=plastic)](https://hub.docker.com/r/strm/tor-hiddenservice-nginx/)
 ![License](https://img.shields.io/badge/License-GPL-blue.svg?style=plastic)
 
-
-<h2>:warning: This fork is under developpement and thus not recommanded. :warning:</h2>
-
 Easily run a hidden service inside the Tor network with this container
 
 
