@@ -38,7 +38,7 @@ then
     echo '[+] Creating www folder'
     mkdir /web/www
     chmod 700 /web/
-    chmod 777 /web/www
+    chmod 755 /web/www
     echo '[+] Generating index.html template'
     echo '<html><head><title>Your very own hidden service is ready</title></head><body><h1>Well done !</h1></body></html>' > /web/www/index.html
     chown hidden:hidden -R /web/www
@@ -57,10 +57,6 @@ then
     tor -f /etc/tor/torrc &
     echo '[+] Starting nginx'
     nginx &
-    
-    #debug
-    echo $(ls -la /web/)
-    echo $(ls -la /web/www)
     
     # Monitor logs
     sleep infinity
