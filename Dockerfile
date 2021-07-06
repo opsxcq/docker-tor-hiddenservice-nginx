@@ -6,7 +6,8 @@ LABEL maintainer="ozeliurs@gmail.com"
 RUN apt-get update && \
     apt-get -y install \
     nginx \
-    tor torsocks ntpdate
+    tor torsocks ntpdate \
+    sudo
 
 # Compile mkp224o
 ADD ./mkp224o /mkp224o
