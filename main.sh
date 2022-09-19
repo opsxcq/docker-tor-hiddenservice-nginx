@@ -12,13 +12,20 @@ then
         echo '[-] You dont provided any mask, please inform an mask to generate your address'
         exit -1
     else
+        echo "[+] Building mkp224o"
+        cd /mkp224o
+        ./autogen.sh
+        ./configure
+        make
+        mv ./mkp224o /bin
+        cd /
+        rm -Rf /mkp224o
+        apt-get -y purge gcc libsodium-dev make autoconf
+        rm -Rf /var/lib/apt/lists/*
+
         echo '[+] Generating the address with mask: '$2
-        if [ -d /tmp/keys ]
-        then
-            rm /tmp/keys/ -r
-        else
-            mkdir /tmp/keys
-        fi
+        rm -rf /tmp/keys && mkdir /tmp/keys
+        
         mkp224o $2 -n 1 -d /tmp/keys &> /dev/null
         echo '[+] Found '$(cat /tmp/keys/*.onion/hostname)
         cp /tmp/keys/*.onion/*secret_key /web/
