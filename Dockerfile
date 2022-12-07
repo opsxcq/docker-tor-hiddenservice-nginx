@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM debian:11.5
 
 LABEL maintainer="ozeliurs@gmail.com"
 
