@@ -1,4 +1,4 @@
-FROM debian:11.5
+FROM debian:bullseye
 
 LABEL maintainer="ozeliurs@gmail.com"
 
