@@ -2,12 +2,6 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/ozeliurs/tor-hiddenservice-nginx.svg?style=plastic)](https://hub.docker.com/r/ozeliurs/tor-hiddenservice-nginx/)
 ![License](https://img.shields.io/badge/License-GPL-blue.svg?style=plastic)
 
-<p align="center">
-  <a href="https://sonarqube.ozeliurs.com/dashboard?id=docker-tor-hiddenservice-nginx">
-    <img src="https://sonarqube.ozeliurs.com/api/project_badges/quality_gate?project=docker-tor-hiddenservice-nginx&token=fafab838944b408774e000f0c2e7f6176916a3a8"> 
-  </a>
-</p>
-
 This is a fork of opsxcq's project. This docker image now supports tor v3
 adresses and shallot has been replaced by mkp224o (v3 compatible).
 Feel free to open issues on this project if you see something wrong.
