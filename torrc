@@ -1,4 +1,5 @@
 DataDirectory /tmp/tor
 HiddenServiceDir /web/
+HiddenServiceVersion 3
 HiddenServicePort 80 127.0.0.1:8080
 Log notice stdout 

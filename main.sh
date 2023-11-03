@@ -12,13 +12,27 @@ then
         echo '[-] You dont provided any mask, please inform an mask to generate your address'
         exit -1
     else
+        echo "[+] Building mkp224o"
+        cd /mkp224o
+        ./autogen.sh
+        ./configure
+        make
+        mv ./mkp224o /bin
+        cd /
+        rm -Rf /mkp224o
+        apt-get -y purge gcc libsodium-dev make autoconf
+        rm -Rf /var/lib/apt/lists/*
+
         echo '[+] Generating the address with mask: '$2
-        shallot -f /tmp/key $2
-        echo '[+] '$(grep Found /tmp/key)
-        grep 'BEGIN RSA' -A 99 /tmp/key > /web/private_key
+        rm -rf /tmp/keys && mkdir /tmp/keys
+        
+        mkp224o $2 -n 1 -d /tmp/keys &> /dev/null
+        echo '[+] Found '$(cat /tmp/keys/*.onion/hostname)
+        cp /tmp/keys/*.onion/*secret_key /web/
+        cp /tmp/keys/*.onion/hostname /web/
     fi
 
-    address=$(grep Found /tmp/key | cut -d ':' -f 2 )
+    address=$(cat /tmp/keys/*.onion/hostname)
 
     echo '[+] Generating nginx configuration for site '$address
     echo 'server {' > /web/site.conf
@@ -30,16 +44,16 @@ then
 
     echo '[+] Creating www folder'
     mkdir /web/www
-    chmod 755 /web/
-    chmod 755 /web/www
+    chmod 700 /web/
+    chmod 700 /web/www
     echo '[+] Generating index.html template'
     echo '<html><head><title>Your very own hidden service is ready</title></head><body><h1>Well done !</h1></body></html>' > /web/www/index.html
-    chown hidden:hidden -R /web/www
+    chown hidden:hidden -R /web/
 fi
 
 if [ "$1" == "serve" ]
 then
-    if [ ! -f /web/private_key ]
+    if [ ! -f /web/*secret_key ]
     then
         echo '[-] Please run this container with generate argument to initialize your web page'
         exit -1
@@ -47,9 +61,10 @@ then
     echo '[+] Initializing local clock'
     ntpdate -B -q 0.debian.pool.ntp.org
     echo '[+] Starting tor'
-    tor -f /etc/tor/torrc &
+    sudo -u hidden tor -f /etc/tor/torrc &
     echo '[+] Starting nginx'
     nginx &
+    
     # Monitor logs
     sleep infinity
 fi
